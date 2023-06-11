@@ -1,9 +1,13 @@
 import React from 'react'
 import { Card, CardContent, CardActions, Divider } from '@mui/material'
+import { Link } from 'react-router-dom';
 import cars from '../cars.json'
+
+
 
 const Home = () => {
     console.log('CARS', cars)
+    
     return (
         <div className="card-container">
             {cars.map((car, idx) => (
@@ -20,7 +24,7 @@ const Home = () => {
                     <Divider />
                     <CardActions style={{ color: 'mediumblue' }}>
                         {/* Change a tag to Link */}
-                        <a>See more Details</a>
+                        <Link to={`/car/${car.id}`}>See more Details</Link>
                     </CardActions>
                 </Card>
             ))}
